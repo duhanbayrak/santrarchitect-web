@@ -174,6 +174,6 @@ function isLoggedIn(req, res, next) {
 
 
 
-app.listen(3000, () => console.log(`Example app listening on port port!`));
+app.listen(PORT, () => console.log(`Example app listening on port port!`));
 
 
