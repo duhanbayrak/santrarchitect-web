@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>SantrArchitect</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/50/000000/circled-s.png" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<style>
+    #services h4 {
+        color: #157347;
+    }
+</style>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top animate__animated animate__fadeInDown" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#Home">SantrArchitect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/#services">HİZMETLERİMİZ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#portfolio">PORTFOLYO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#about">HAKKIMIZDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#team">EKİP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#contact">İLETİŞİM</a></li>
+                    <% if(currentUser){ %>
+
+                        <li class="nav-item">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="/admin">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="/logout">Çıkış</a>
+                        </li>
+                        
+
+                    <% }%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead animate__animated animate__fadeInLeft">
+        <div class="container">
+            <div class="masthead-subheading">Hoşgeldiniz!</div>
+            <div class="masthead-heading text-uppercase">TASARIMDAN FAZLASI...</div>
+            <a class="btn btn-success btn-xl text-uppercase" href="#services">Daha Fazla Keşfet</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="color:#157347;">HİZMETLER</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row text-center" id="services">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-archway fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Mimari ve Kentsel Projeler</h4>
+                    <p class="text-muted">Her türlü yapı ölçeğinde, uluslararası düzeyde kabul edilen çağdaş kalite
+                        standartlarında, dünyanın herhangi bir noktasında mimari konsept, uygulama ve detay projeleri
+                        hazırlıyoruz.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-couch fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">İç Mekan Tasarımı</h4>
+                    <p class="text-muted">Mevcut veya planlama aşamasındaki yapılarda kullanıcı ihtiyaçlarını en iyi
+                        şekilde analiz ederek iç mekan tasarımı ve görsel sunum hizmetleri veriyoruz.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-cog fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Proje Yönetimi</h4>
+                    <p class="text-muted">Tasarım veya inşaat aşamalarında işveren adına proje süreçlerini takip
+                        ediyoruz. Farklı kültür ve uzmanlık alanındaki ekipler arasında koordinasyonu ve verimli çalışma
+                        ortamını sağlamak üzere proje yönetimi yapıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- Portfolio Grid-->
+
+    <section class="page-section bg-light" id="portfolio" >
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Portfolyo</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+
+            <div class="row">
+                <% var firstProjects=projects.slice(0,6) %>
+                    <% firstProjects.forEach(e=> { %>
+                        <% let projectId=e.id.toString() %>
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                                <!-- Portfolio item 1-->
+
+                                <div class="portfolio-item">
+
+                                    <a class="portfolio-link" data-bs-toggle="modal" href="#a<%= projectId %>  ">
+                                        <div class="portfolio-hover">
+                                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                        </div>
+
+                                        <img class="img-fluid" src="<%= e.image_1 %>" alt="..." />
+                                    </a>
+                                    <div class="portfolio-caption">
+                                        <div class="portfolio-caption-heading">
+                                            <%=e.title%>
+                                        </div>
+                                        <div class="portfolio-caption-subheading text-muted">
+                                            <%= e.category %>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="portfolio-modal modal fade" id="a<%= projectId %>" tabindex="-1" role="dialog"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+
+                                    <div class="modal-content">
+                                        <div class="close-modal" data-bs-dismiss="modal"><img
+                                                src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-8">
+
+                                                    <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">
+                                                            <%= e.projectName %>
+                                                        </h2>
+                                                        <p class="item-intro text-muted">
+                                                            <%= e.intro %>
+                                                        </p>
+                                                        <img style="height: auto !important;"
+                                                            class="img-fluid d-block mx-auto" src="<%= e.image_1 %>"
+                                                            alt="..." />
+                                                        <p>
+                                                            <%= e.content %>
+                                                        </p>
+                                                        <ul class="list-inline">
+                                                            <li>
+                                                                <strong>Client:</strong>
+                                                                <%= e.title %>
+                                                            </li>
+                                                            <li>
+                                                                <strong>Category:</strong>
+                                                                <%= e.category %>
+                                                            </li>
+                                                        </ul>
+
+                                                        <a href="/project/<%= e.id %>" style="float: right !important;"
+                                                            class="btn btn-outline-success btn-xl text-uppercase">Detay</a>
+                                                        <button class="btn btn-success btn-xl text-uppercase"
+                                                            data-bs-dismiss="modal" type="button">
+                                                            <i class="fas fa-times me-1"></i>
+                                                            Kapat
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <% }) %>
+            </div>
+            <a href="/allProjects" style="float: right !important;"
+                class="btn btn-success btn-xl text-uppercase"><i class="fas fa-chevron-right"></i> Tüm Projeler
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="color: #157347;">HAKKIMIZDA</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <h1>SantrArchitect</h1>
+                    <hr>
+                    <p class="item-intro text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into electronic typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum</p>
+                    <p class="item-intro text-muted">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                    </p>
+                    <p class="item-intro text-muted">It is a long established fact that a reader will be distracted by
+                        the readable content of a page when looking at its layout.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Team-->
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="color: #157347;">EKİP</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle"
+                            src="https://i.pinimg.com/280x280_RS/13/df/6e/13df6e0d0bb093b49767aad7f2360a6e.jpg"
+                            alt="..." />
+                        <h4>Şeyda Naharoğlu</h4>
+                        <p class="text-muted">Mimar</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle"
+                            src="https://i.pinimg.com/280x280_RS/00/b7/dd/00b7ddc351fd5531a1be1ce0ba954c1a.jpg"
+                            alt="..." />
+                        <h4>Beraet Uçar</h4>
+                        <p class="text-muted">Mimar</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
+                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="color: #157347;">İletişim</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- Name input-->
+                            <input class="form-control" id="name" type="text" placeholder="Your Name *"
+                                data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Email address input-->
+                            <input class="form-control" id="email" type="email" placeholder="Your Email *"
+                                data-sb-validations="required,email" />
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <!-- Phone number input-->
+                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
+                                data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <!-- Message input-->
+                            <textarea class="form-control" id="message" placeholder="Your Message *"
+                                data-sb-validations="required"></textarea>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center text-white mb-3">
+                        <div class="fw-bolder">Form submission successful!</div>
+                        To activate this form, sign up at
+                        <br />
+                        <a
+                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                    </div>
+                </div>
+                <div class="text-center"><button class="btn btn-success btn-xl text-uppercase" id="submitButton"
+                        type="submit">Send Message</button></div>
+            </form>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; SantrArchitect 2021</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    
+</body>
+
+</html>
