@@ -206,4 +206,4 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login")
 }
 
-app.listen(PORT, () => console.log("Example app listening on port port!"));
+app.listen(1000, () => console.log("Example app listening on port port!"));
