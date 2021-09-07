@@ -23,52 +23,41 @@
   #services h4 {
     color: #157347;
   }
+  .admin{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .admin a{
+    margin: 10px;
+    width: 400px;
+  }
 </style>
 
 <body id="page-top">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top animate__animated animate__fadeInDown" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="/#Home">SantrArchitect</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/#services">HİZMETLERİMİZ</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#portfolio">PORTFOLYO</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#about">HAKKIMIZDA</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#team">EKİP</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#contact">İLETİŞİM</a></li>
-          <% if(currentUser){ %>
-
-            <li class="nav-item">
-              <a class="nav-link px-lg-3 py-3 py-lg-4" href="/admin">Admin</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-lg-3 py-3 py-lg-4" href="/logout">Çıkış</a>
-            </li>
-
-
-            <% }%>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <%- include('./partials/navbar') %>
+  
   <header class="masthead animate__animated animate__fadeInRight"
     style="background-image: url('https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg'); ">
     <div class="container position-relative px-4 px-lg-5 ">
       <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="col-lg-8">
           <div class="site-heading baslik">
             <h1 style="color: green;">Yönetim Paneli</h1>
             <hr>
-            <a href="/addNewProject" class="btn btn-success btn-xl ">Yeni Proje Ekle</a>
-            <a href="/allProjects" class="btn btn-success btn-xl ">Projeleri Yönet</a>
-            <a href="/signup" class="btn btn-success btn-xl ">Yeni Kullanıcı Ekle</a>
-           
+            <div class="admin">
+              <a href="/addNewProject" class="btn btn-success btn-xl ">Yeni Proje Ekle</a>
+              <a href="/allProjects" class="btn btn-success btn-xl ">Projeleri Yönet</a>
+              <a href="/signup" class="btn btn-success btn-xl ">Yeni Kullanıcı Ekle</a>
+              <a href="/aboutText" class="btn btn-success btn-xl ">Hakkında Kısmını Düzenle</a>
+              
+             
+
+            </div>
+
 
           </div>
         </div>

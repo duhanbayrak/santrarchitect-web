@@ -9,6 +9,8 @@ const express = require('express'),
     localStrategy = require("passport-local"),
     expressSession = require("express-session"),
     User = require("./models/userModel"),
+    AboutText = require("./models/aboutTextModel"),
+    HomeImage = require("./models/homeImageModel"),
     Project = require("./models/ProjectModel"),
     fileUpload = require("express-fileupload"),
     path = require("path");
@@ -51,19 +53,25 @@ app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
 })
-
-app.get("/", (req, res) => {
-
-    Project.find().sort({ date: -1 })
-        .then((result) => {
-            res.render("index", { projects: result })
-        }).catch((err) => {
-            console.log(err)
+//**************************************---HOME PAGE---**************************************//
+app.get('/', function (req, res) {
+    Project.find({}, '', function (errorOne, dataOne) {
+        if (errorOne)
+            throw new Error(errorOne);
+        AboutText.findById("61315f1091a28a24753ded6d", function (errorTwo, dataTwo) {
+            if (errorTwo)
+                throw new Error(errorTwo);
+            res.render("index", {
+                projects: dataOne,
+                about: dataTwo
+            });
+           
         });
+    });
+    
 });
-app.get("/addNewProject", isLoggedIn,(req, res) => {
-    res.render("addNewProject");
-});
+//**************************************---PROJECT PAGE---**************************************//
+
 app.get("/allProjects", (req, res) => {
     Project.find().sort({ date: -1 })
         .then((result) => {
@@ -72,16 +80,7 @@ app.get("/allProjects", (req, res) => {
             console.log(err)
         });
 });
-app.delete("/allProjects/delete/:id",(req,res) => {
-    const id = req.params.id;
-    Project.findByIdAndDelete(id)
-     .then((result) => {
-         res.json({link:"/allProjects"})
-     })
-      .catch((err) => {
-         console.log(err);
-      })
- })
+
 app.get("/project/:id", (req, res) => {
 
     const id = req.params.id
@@ -91,6 +90,12 @@ app.get("/project/:id", (req, res) => {
         }).catch((err) => {
             console.log(err)
         });
+});
+
+//**************************************---ADMİN---**************************************//
+
+app.get("/admin", isLoggedIn, (req, res) => {
+    res.render("admin")
 });
 app.post("/test", (req, res) => {
     let image_1 = req.files.image_1;
@@ -129,8 +134,37 @@ app.post("/test", (req, res) => {
             console.log(err);
         });
 });
-app.get("/admin", isLoggedIn, (req, res) => {
-    res.render("admin")
+app.delete("/allProjects/delete/:id", (req, res) => {
+    const id = req.params.id;
+    Project.findByIdAndDelete(id)
+        .then((result) => {
+            res.json({ link: "/allProjects" })
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+})
+app.get("/addNewProject", isLoggedIn, (req, res) => {
+    res.render("addNewProject")
+});
+app.get("/aboutText", (req, res) => {
+    AboutText.findById("61315f1091a28a24753ded6d")
+        .then((result) => {
+            res.render("aboutText",{aboutText:result})
+        }).catch((err) => {
+            console.log(err)
+        });
+});
+app.post("/aboutText", (req, res) => {
+
+    console.log(req.body.title)
+
+    AboutText.findOneAndUpdate({ _id: "61315f1091a28a24753ded6d" }, { title: req.body.title, aboutText: req.body.aboutText })
+        .then((result) => {
+            res.redirect("/")
+        }).catch((err) => {
+            console.log(err)
+        });
 });
 
 app.get("/login", (req, res) => {
@@ -144,10 +178,10 @@ app.post("/login", passport.authenticate("local",
     }), (req, res) => {
 
     });
-app.get("/signup",isLoggedIn, (req, res) => {
+app.get("/signup", isLoggedIn, (req, res) => {
     res.render("signup")
 });
-app.post("/signup",  (req, res) => {
+app.post("/signup", (req, res) => {
     console.log(req.body)
     const newUser = new User({ username: req.body.username })
     User.register(newUser, req.body.password, (err, user) => {
@@ -172,8 +206,4 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login")
 }
 
-
-
-app.listen(PORT, () => console.log(`Example app listening on port port!`));
-
-
+app.listen(PORT, () => console.log("Example app listening on port port!"));
