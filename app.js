@@ -16,7 +16,7 @@ const express = require('express'),
     path = require("path");
 
 
-const dbURL = 'mongodb+srv://duhanbayrak:348415Duhan@duhandb.pylk5.mongodb.net/santrarchitect?retryWrites=true&w=majority';
+const dbURL = 'mongodb+srv://duhanbayrak:<password>@duhandb.pylk5.mongodb.net/santrarchitect?retryWrites=true&w=majority';
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true, ssl: true })
     .then((result) => {
