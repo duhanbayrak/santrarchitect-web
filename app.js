@@ -88,7 +88,7 @@ app.get("/project/:id", (req, res) => {
         .then((result) => {
             res.render("project", { projects: result })
         }).catch((err) => {
-            console.log(err)
+            console.log(err);
         });
 });
 
