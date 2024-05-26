@@ -1,5 +1,5 @@
 # santrarchitect-web
-Bir mimarlık ofisi için site içi yönetim paneli olan responsive web sitesi
+Bir mimarlık ofisi için site içi yönetim paneli olan responsive web uygulaması
 <br>
 <br>
 Kullanıcıların projelerini paylaşabildiği,düzenleyebildiği örnek bir proje.
